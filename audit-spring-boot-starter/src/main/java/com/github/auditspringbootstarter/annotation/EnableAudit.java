@@ -24,5 +24,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(LogCostConfigurationSelector.class)
-public @interface EnableLogCost {
+public @interface EnableAudit {
 }

@@ -37,6 +37,11 @@ public class LogCostInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        log.info("cost - {}", (System.currentTimeMillis() - (long) request.getAttribute(START)));
+        log.info(
+                "消耗的时间：{}ms   请求的路径：{}",
+                (System.currentTimeMillis() - (long) request.getAttribute(START)),
+                request.getRequestURI()
+        );
     }
+
 }
