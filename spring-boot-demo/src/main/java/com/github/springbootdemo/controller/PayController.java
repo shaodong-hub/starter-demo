@@ -1,5 +1,6 @@
 package com.github.springbootdemo.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,13 +15,26 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 0.0.1
  */
 
+@Slf4j
 @RestController
 public class PayController {
 
     @PostMapping("/pay")
     public String pay() {
-        return "pay success";
+        return getMessage();
     }
 
+//    @PostMapping("/pay")
+//    public String pay() {
+//        long start = System.currentTimeMillis();
+//        String message = getMessage();
+//        long end = System.currentTimeMillis();
+//        log.info("耗时：{}ms  请求的url： {}", (end - start), "/pay");
+//        return message;
+//    }
+
+    private String getMessage(){
+        return "pay success";
+    }
 
 }
